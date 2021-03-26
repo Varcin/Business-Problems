@@ -85,7 +85,7 @@ correlation_tbl %>%
     
     # Formatting
     expand_limits(x = c(-0.4, 0.4)) +
-    theme_tq() +
+    theme_classic() +
     labs(title = "Bank Marketing Analysis",
          subtitle = "Correlations to Enrollment in Term Deposit",
          y = "", x = "Correlation to Term Deposit")
@@ -130,10 +130,9 @@ strategy_tbl %>%
     geom_label(aes(label = label_text), fill = "white", color = "#2c3e50") +
     scale_fill_tq() +
     scale_y_continuous(labels = scales::percent_format()) +
-    theme_tq() +
+    theme_classic() +
     labs(title = "Bank Marketing Strategy",
          subtitle = str_glue("Targeting customers that haven't been contacted in 319 days 
-                             or those with prior enrollments yields 32% vs 4.3%")
-    )
+                             or those with prior enrollments yields 32% vs 4.3%"))
 
 

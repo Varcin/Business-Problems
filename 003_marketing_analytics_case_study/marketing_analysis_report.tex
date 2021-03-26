@@ -1,0 +1,255 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Term Deposit Prediction \& Marketing Analysis},
+  pdfauthor={Business Science},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Term Deposit Prediction \& Marketing Analysis}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Targeting Customers that are likely to opt into a Term Deposit service}
+\author{Business Science}
+\date{2/13/2019}
+
+\begin{document}
+\maketitle
+
+\hypertarget{executive-summary}{%
+\section{Executive Summary}\label{executive-summary}}
+
+\begin{itemize}
+\tightlist
+\item
+  Duration since last contact and success of prior enrollments are
+  correlated to success of Term Deposit opt-in
+\item
+  A strategy targeting customers that haven't been contacted in 319 days
+  and have those with prior enrollments yields 32\% positive outcomes
+  (enrollments) vs 4.3\% otherwise.
+\end{itemize}
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Libraries}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(readxl)}
+\KeywordTok{library}\NormalTok{(recipes)}
+\KeywordTok{library}\NormalTok{(tidyquant)}
+\KeywordTok{library}\NormalTok{(ggrepel)}
+
+
+\CommentTok{# 1.0 READ EXCEL SHEETS ----}
+\NormalTok{path   <-}\StringTok{ "data/bank_term_deposit_marketing_analysis.xlsx"}
+\NormalTok{sheets <-}\StringTok{ }\KeywordTok{excel_sheets}\NormalTok{(path)}
+
+
+\CommentTok{# # 2.0 INVESTIGATE DATA FOR EACH SHEET ----}
+\CommentTok{# sheets %>%}
+\CommentTok{#     map(~ read_excel(path  = path, sheet = .)) %>%}
+\CommentTok{#     set_names(sheets)}
+
+
+\CommentTok{# 3.0 PERFORM VLOOKUP EQUIVALENT ----}
+\NormalTok{data_joined_tbl <-}\StringTok{ }\NormalTok{sheets[}\DecValTok{4}\OperatorTok{:}\DecValTok{7}\NormalTok{] }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{map}\NormalTok{(}\OperatorTok{~}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\DataTypeTok{path =}\NormalTok{ path, }\DataTypeTok{sheet =}\NormalTok{ .)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{reduce}\NormalTok{(left_join)}
+
+\CommentTok{# 4.0 ANALYZE ----}
+
+\CommentTok{# 4.1 Prepare Data ----}
+\CommentTok{# recipes reference: https://tidymodels.github.io/recipes/reference/index.html}
+
+\NormalTok{recipe_obj <-}\StringTok{ }\KeywordTok{recipe}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{., }\DataTypeTok{data =}\NormalTok{ data_joined_tbl) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{step_rm}\NormalTok{(ID) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{step_discretize}\NormalTok{(}\KeywordTok{all_numeric}\NormalTok{(), }\DataTypeTok{options =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{min_unique =} \DecValTok{1}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{step_dummy}\NormalTok{(}\KeywordTok{all_nominal}\NormalTok{(), }\DataTypeTok{one_hot =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{naming =} \KeywordTok{partial}\NormalTok{(dummy_names, }\DataTypeTok{sep =} \StringTok{"__"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{prep}\NormalTok{()}
+
+\NormalTok{data_transformed_tbl <-}\StringTok{ }\NormalTok{data_joined_tbl }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{bake}\NormalTok{(recipe_obj, }\DataTypeTok{new_data =}\NormalTok{ .) }
+
+\CommentTok{# 4.2 Correlation Analysis ----}
+
+\CommentTok{# Prepare Correlations}
+\NormalTok{correlation_tbl <-}\StringTok{ }\NormalTok{data_transformed_tbl }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{cor}\NormalTok{(}\DataTypeTok{y =}\NormalTok{ data_transformed_tbl}\OperatorTok{$}\NormalTok{TERM_DEPOSIT__yes) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{as_tibble}\NormalTok{(}\DataTypeTok{rownames =} \StringTok{"feature"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{TERM_DEPOSIT__yes =}\NormalTok{ V1) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{separate}\NormalTok{(feature, }\DataTypeTok{into =} \KeywordTok{c}\NormalTok{(}\StringTok{"feature"}\NormalTok{, }\StringTok{"bin"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{"__"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(TERM_DEPOSIT__yes)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{filter}\NormalTok{(}\OperatorTok{!}\KeywordTok{str_detect}\NormalTok{(feature, }\StringTok{"TERM_DEP"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{abs}\NormalTok{(TERM_DEPOSIT__yes) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{desc}\NormalTok{()) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{feature =} \KeywordTok{as_factor}\NormalTok{(feature) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{fct_rev}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+Correlation of various features to Term Deposit enrollment. Duration
+since last contact and success of prior enrollments are correlated to
+success of Term Deposit opt-in.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Visualize Correlations}
+\NormalTok{correlation_tbl }\OperatorTok{%>%}
+\StringTok{    }
+\StringTok{    }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(TERM_DEPOSIT__yes, }\DataTypeTok{y =}\NormalTok{ feature, }\DataTypeTok{text =}\NormalTok{ bin)) }\OperatorTok{+}
+\StringTok{    }
+\StringTok{    }\CommentTok{# Geometries}
+\StringTok{    }\KeywordTok{geom_vline}\NormalTok{(}\DataTypeTok{xintercept =} \DecValTok{0}\NormalTok{, }\DataTypeTok{linetype =} \DecValTok{2}\NormalTok{, }\DataTypeTok{color =} \StringTok{"red"}\NormalTok{) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{color =} \StringTok{"#2c3e50"}\NormalTok{) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_text_repel}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{label =}\NormalTok{ bin), }\DataTypeTok{size =} \DecValTok{3}\NormalTok{, }\DataTypeTok{color =} \StringTok{"#2c3e50"}\NormalTok{) }\OperatorTok{+}
+\StringTok{    }
+\StringTok{    }\CommentTok{# Formatting}
+\StringTok{    }\KeywordTok{expand_limits}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{0.4}\NormalTok{, }\FloatTok{0.4}\NormalTok{)) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{    }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Bank Marketing Analysis"}\NormalTok{,}
+         \DataTypeTok{subtitle =} \StringTok{"Correlations to Enrollment in Term Deposit"}\NormalTok{,}
+         \DataTypeTok{y =} \StringTok{""}\NormalTok{, }\DataTypeTok{x =} \StringTok{"Correlation to Term Deposit"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{marketing_analysis_report_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\hypertarget{strategy}{%
+\section{Strategy}\label{strategy}}
+
+A strategy targeting customers that haven't been contacted in 319 days
+and have those with prior enrollments yields 32\% positive outcomes
+(enrollments) vs 4.3\% otherwise.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{strategy_tbl <-}\StringTok{ }\NormalTok{data_joined_tbl }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{select}\NormalTok{(DURATION, POUTCOME, TERM_DEPOSIT) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{POTENTIAL =} \KeywordTok{case_when}\NormalTok{(}
+\NormalTok{        DURATION }\OperatorTok{>}\StringTok{ }\DecValTok{319} \OperatorTok{~}\StringTok{ "High Potential"}\NormalTok{,}
+\NormalTok{        POUTCOME }\OperatorTok{==}\StringTok{ "success"} \OperatorTok{~}\StringTok{ "High Potential"}\NormalTok{,}
+        \OtherTok{TRUE} \OperatorTok{~}\StringTok{ "Normal"}
+\NormalTok{    )) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{group_by}\NormalTok{(POTENTIAL) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{count}\NormalTok{(TERM_DEPOSIT) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{prop =}\NormalTok{ n }\OperatorTok{/}\StringTok{ }\KeywordTok{sum}\NormalTok{(n)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{label_text =} \KeywordTok{str_glue}\NormalTok{(}\StringTok{"n: \{n\}}
+\StringTok{                                 prop: \{scales::percent(prop)\}"}\NormalTok{))}
+
+\NormalTok{strategy_tbl }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(POTENTIAL, prop, }\DataTypeTok{fill =}\NormalTok{ TERM_DEPOSIT)) }\OperatorTok{+}\StringTok{ }
+\StringTok{    }\KeywordTok{geom_col}\NormalTok{() }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_label}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{label =}\NormalTok{ label_text), }\DataTypeTok{fill =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{color =} \StringTok{"#2c3e50"}\NormalTok{) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{scale_fill_tq}\NormalTok{() }\OperatorTok{+}
+\StringTok{    }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{labels =}\NormalTok{ scales}\OperatorTok{::}\KeywordTok{percent_format}\NormalTok{()) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}
+\StringTok{    }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Bank Marketing Strategy"}\NormalTok{,}
+         \DataTypeTok{subtitle =} \KeywordTok{str_glue}\NormalTok{(}\StringTok{"Targeting customers that haven't been contacted in 319 days }
+\StringTok{                             or those with prior enrollments yields 32% vs 4.3%"}\NormalTok{)}
+\NormalTok{    )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{marketing_analysis_report_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\end{document}
