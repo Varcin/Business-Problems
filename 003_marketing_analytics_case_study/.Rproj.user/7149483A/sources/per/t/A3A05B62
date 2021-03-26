@@ -1,0 +1,32 @@
+{
+    "id": "A3A05B62",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1616650145967.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "data_joined_tbl",
+        "caption": "data_joined_tbl",
+        "totalObservations": 45211,
+        "displayedObservations": 45211,
+        "variables": 18,
+        "cacheKey": "570896E4",
+        "object": "data_joined_tbl",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=data_joined_tbl&cache_key=570896E4&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 32370017466253413,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1616650145967,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,13 @@
+{
+    "path" : "~/Desktop/excel_to_r",
+    "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 1
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 2
+        }
+    ]
+}
