@@ -176,13 +176,22 @@ comp_1_diff_bootstrap_tbl <- comparison_1_tbl %>%
 bootstrap_ci_tbl <- comp_1_diff_bootstrap_tbl %>%
     get_confidence_interval(level = 0.95, type = "percentile")
 
-comp_1_diff_bootstrap_tbl %>%
-    visualize() +
+conversion_bootstrap <- comp_1_diff_bootstrap_tbl %>%
+    visualize() + 
+    labs(title = "Distribution of Conversion Rate with 95% CI") +
     theme_minimal() + 
-    shade_confidence_interval(endpoints = bootstrap_ci_tbl) +
-    geom_vline(xintercept = comp_1_diff_means$stat, color = "red")
+    shade_confidence_interval(endpoints = bootstrap_ci_tbl, fill = "azure", size = 0.5) +
+    geom_vline(xintercept = comp_1_diff_means$stat, color = "red", size = 0.3) +
+    scale_x_continuous(labels = scales::percent_format()) +
+    xlab("Change in Conversion Rate") +
+    ylab("Count") +
+    theme(text=element_text(size=3),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_blank(),
+          panel.grid.minor = element_blank())
 # 95% confidence interval is around 0 and most of probability distribution is negative. 
 # No go. 
-
+conversion_bootstrap
+ggsave(conversion_bootstrap, filename = 'img/ab_test_conversion_bootstrap.png', width = 1.5, height = 0.9)
 
 
