@@ -470,23 +470,23 @@ forecast_results <- bind_rows(
 
 
 results_plot <- ggplot(forecast_results, aes(date, .value, color = .model_desc)) +
-    geom_line(size = 0.75) +
+    geom_line(size = 0.55) +
     scale_y_continuous(labels = scales::comma) +
     scale_color_manual(values = c("gray50", "green3", "#FE5000")) +
     labs(x='', y = 'Thousand MWH Net Generation', color='') +
     facet_wrap(~fuel, ncol = 3, scales = "free_y") +
     theme_minimal() +
-    theme(legend.position = "bottom",
+    theme(legend.position = "top",
           axis.title.x = element_blank(),
           panel.grid.major.x = element_blank(),
           panel.grid.minor = element_blank(),
-          text = element_text(size = 10),
-          strip.text = element_text(size=10),
-          legend.text = element_text(size=8))
+          text = element_text(size = 7.5),
+          strip.text = element_text(size=7.5),
+          legend.text = element_text(size=6.5))
 
 p_results_plot <- plotly::ggplotly(results_plot + theme(panel.spacing.y=unit(0.5, "lines"))) %>%
     plotly::layout(legend = list(orientation = "h", x = 0.4, y = -0.2))
 
-ggsave(results_plot, filename = "img/results_plot.png", width = 8, height = 9, units = "in")
+ggsave(results_plot, filename = "img/results_plot.png", width = 6, height = 6.75, units = "in")
 htmlwidgets::saveWidget(p_results_plot, "img/results_plot.html")
 
