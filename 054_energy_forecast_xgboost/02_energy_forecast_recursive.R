@@ -487,6 +487,6 @@ results_plot <- ggplot(forecast_results, aes(date, .value, color = .model_desc))
 p_results_plot <- plotly::ggplotly(results_plot + theme(panel.spacing.y=unit(0.5, "lines"))) %>%
     plotly::layout(legend = list(orientation = "h", x = 0.4, y = -0.2))
 
-ggsave(results_plot, filename = "img/results_plot.png", width = 6, height = 6.75, units = "in")
-htmlwidgets::saveWidget(p_results_plot, "img/results_plot.html")
+ggsave(results_plot, filename = "img/energy_forecast.png", width = 6, height = 6.75, units = "in")
+htmlwidgets::saveWidget(p_results_plot, "img/energy_forecast.html")
 

@@ -50,6 +50,7 @@ customer_churn_tbl %>%
     glimpse()
 
 # Prep Data: Remove non-predictive ID & fix NA's
+# Looks like total charges for the first month is entered NA for new customers 
 customer_churn_prep_tbl <- customer_churn_tbl %>%
     select(-customerID) %>%
     mutate(TotalCharges = case_when(
@@ -58,14 +59,21 @@ customer_churn_prep_tbl <- customer_churn_tbl %>%
     )) 
 
 # Correlation Funnel 
-customer_churn_prep_tbl %>%
-    binarize() %>%
-    correlate(Churn__Yes) %>% 
-    plot_correlation_funnel(interactive = FALSE, alpha = 0.7)
+corr_funel_1 <- customer_churn_prep_tbl %>%
+    binarize() %>% # Creates 1s and 0s for each category. If categorical it creates dummy variables, if numeric it creates bins as dummy variables.
+    correlate(Churn__Yes) %>% # I am interested in Churn. That's what I will predict. 
+    plot_correlation_funnel(interactive = FALSE, alpha = 0.7) +
+    theme_minimal() + 
+    xlab("Feature") +
+    ylab("Correlation") + 
+    theme(text=element_text(size=12))
+corr_funel_1
+ggsave(corr_funel_1, filename = "img/corr_funel_1.png", width = 9.93, height = 4)
 
 
 # 4.0 SURVIVAL ANALYSIS ----
-# I have selected below variables based on looking at the correlation funnel
+# I have selected below variables by looking at the correlation funnel
+# I am skipping tenure because I will use that as the time varient feature of the model
 train_tbl <- customer_churn_prep_tbl %>%
     mutate(
         Churn_Yes                     = Churn == "Yes",
@@ -82,7 +90,7 @@ train_tbl <- customer_churn_prep_tbl %>%
     ) 
 
 
-# 4.1 Survival Tables (Kaplan-Meier Method) ----
+# 4.1 Survival Tables (Kaplan-Meier Method) ---- (simple model)
 # Churn will be based on tenure and we want to look at this by contract.
 survfit_simple <- survfit(Surv(tenure, Churn_Yes) ~ strata(Contract), data = train_tbl)
 survfit_simple
@@ -93,6 +101,7 @@ tidy(survfit_simple)
 # 4.2 Cox Regression Model (Multivariate) ----
 # Cox Proportional Hazard
 # select everything except Contract because that is going to be our stratification variable
+# Use . to tell all the variables but then remove contract because it will be our stratification variable. 
 model_coxph <- coxph(Surv(tenure, Churn_Yes) ~ . - Contract + strata(Contract), data = train_tbl)
 
 # Overall performance
@@ -123,7 +132,7 @@ plot_customer_survival <- function(object_survfit) {
         labs(title = "Churn Problem", color = "Contract Type", 
              x = "Days After Purchase", y = "Percentage of Customers Staying") +
         theme(legend.key=element_blank(),
-            legend.position = "bottom") 
+              legend.position = "bottom") 
     g
     # ggplotly(g) %>% 
     #     plotly::layout(legend = list(orientation = "h", x = 0.2, y = -0.4))
@@ -131,6 +140,15 @@ plot_customer_survival <- function(object_survfit) {
 
 
 plot_customer_survival(survfit_simple)
+survfit_png <- plot_customer_survival(survfit_simple)
+
+survfit_html <- plot_customer_survival(survfit_simple) %>% 
+    ggplotly() %>%
+    plotly::layout(legend = list(orientation = "h", x = 0.2, y = -0.4))
+
+ggsave(survfit_png, filename = "img/014_churn_survical_fit.png")
+htmlwidgets::saveWidget(survfit_html, "img/014_churn_survical_fit.html")
+
 
 survfit_coxph <- survfit(model_coxph)
 plot_customer_survival(survfit_coxph)

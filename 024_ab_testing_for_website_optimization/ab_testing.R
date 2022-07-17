@@ -112,7 +112,21 @@ comparison_1_tbl <- ab_data_tbl %>%
     filter(label %in% comparison_1) %>%
     calculate_conversion_vs_time(label, unit = "1 day")
 
-comparison_1_tbl %>% plot_conversion_vs_time(color = label, loess_se = FALSE)
+conv_over_time <- comparison_1_tbl %>% plot_conversion_vs_time(color = label, loess = FALSE,
+                                             loess_se = FALSE) +
+    coord_cartesian(ylim = c(0.05, 0.15)) +
+    theme(text=element_text(size=3.5),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_blank(),
+          panel.grid.minor = element_blank(),
+          legend.direction = "horizontal",
+          legend.position = c(0.4, 0.1))
+conv_over_time
+
+ggsave(conv_over_time, filename = 'img/ab_test_conversion_overtime.png', width = 2.1, height = 1.35)
+
+
+
 
 comparison_1_tbl %>%
     ggplot(aes(prop)) +
@@ -177,21 +191,22 @@ bootstrap_ci_tbl <- comp_1_diff_bootstrap_tbl %>%
     get_confidence_interval(level = 0.95, type = "percentile")
 
 conversion_bootstrap <- comp_1_diff_bootstrap_tbl %>%
-    visualize() + 
+    visualize() +
     labs(title = "Distribution of Conversion Rate with 95% CI") +
-    theme_minimal() + 
+    theme_minimal() +
     shade_confidence_interval(endpoints = bootstrap_ci_tbl, fill = "azure", size = 0.5) +
     geom_vline(xintercept = comp_1_diff_means$stat, color = "red", size = 0.3) +
     scale_x_continuous(labels = scales::percent_format()) +
     xlab("Change in Conversion Rate") +
     ylab("Count") +
-    theme(text=element_text(size=3),
+    theme(text=element_text(size=3.5),
           panel.grid.major.x = element_blank(),
           panel.grid.major.y = element_blank(),
           panel.grid.minor = element_blank())
 # 95% confidence interval is around 0 and most of probability distribution is negative. 
 # No go. 
-conversion_bootstrap
-ggsave(conversion_bootstrap, filename = 'img/ab_test_conversion_bootstrap.png', width = 1.5, height = 0.9)
+
+ggsave(conversion_bootstrap, filename = 'img/ab_test_conversion_bootstrap.png', width = 2.1, height = 1.35)
+
 
 

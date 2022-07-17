@@ -39,16 +39,22 @@ plot_conversion_vs_time <- function(data, ...,
     
     g <- data %>%
         ggplot(aes(date, prop, ...)) +
-        geom_line() +
+        geom_line(size=0.55) +
         expand_limits(y = 0) +
         scale_y_continuous(labels = scales::percent_format()) +
+        #        scale_color_discrete(name = "", labels=c('Control-Old Page', 'Treatment-New Page')) +
+        scale_color_manual(name = "", 
+                           labels=c('Control-Old Page', 'Treatment-New Page'),
+                           values = c("gray50", "#FE5000")) +
         theme_minimal() +
-        scale_color_brewer(type = "qual", palette = 3) +
-        labs(title = labs_title, y = labs_y, x = labs_x) 
+        #        scale_color_brewer(type = "qual", palette = 3) +
+        labs(title = labs_title, y = labs_y, x = labs_x)
+        
     
     if (loess) g <- g + geom_smooth(method = "loess", span = loess_span, se = loess_se)
     
-    ggplotly(g)
+    #ggplotly(g)
+    g
 }
 
 plot_conversion_heatmap <- function(data, .x, .y, 
